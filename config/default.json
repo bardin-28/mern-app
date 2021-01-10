@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "jwtSecret": "bardin pet-project",
+  "mongoUri": "mongodb+srv://Vladyslav:EFCBzyGNpQjAR3aZt5eVcRk6w@cluster-1.ep95l.mongodb.net/app?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:5000"
+}

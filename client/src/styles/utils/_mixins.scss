@@ -1,0 +1,54 @@
+/* PLACEHOLDER mixin */
+/* -------------------------------------------------------------------------- */
+
+@mixin placeholder {
+    // &.placeholder { @content; }
+    &:-moz-placeholder { @content; } /* Firefox 18- */
+    &::-moz-placeholder { @content; } /* Firefox 19+ */
+    &::-webkit-input-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+}
+
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+        url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false, $unicode-range: false) {
+
+    $file-path: '../fonts/#{$file-path}';
+
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+        // font-display: swap;
+        font-display: block;
+
+        @if $asset-pipeline == true {
+            src: font-url('#{$file-path}.eot');           /* IE9 Compat Modes */
+            src: font-url('#{$file-path}.eot?#iefix')     format('embedded-opentype'),
+            font-url('#{$file-path}.woff')                format('woff'),
+            font-url('#{$file-path}.woff2')               format('woff2'),
+            font-url('#{$file-path}.ttf')                 format('truetype'),
+            font-url('#{$file-path}.svg##{$font-family}') format('svg');
+        } @else {
+            src: url('#{$file-path}.eot');                /* IE9 Compat Modes */
+            src: url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
+            url('#{$file-path}.woff')                     format('woff'),
+            url('#{$file-path}.woff2')                    format('woff2'),
+            url('#{$file-path}.ttf')                      format('truetype'),
+            url('#{$file-path}.svg##{$font-family}')      format('svg');
+        }
+
+        @if $unicode-range == true {
+            unicode-range: $unicode-range;
+        }
+    }
+}

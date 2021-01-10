@@ -1,0 +1,29 @@
+/* --------------------------------------------------------------------------
+ * >>> Font Weight :
+ * 100: Thin (Hairline)
+ * 200: Extra Light (Ultra Light)
+ * 300: Light
+ * 400: Regular
+ * 500: Medium
+ * 600: Semi Bold
+ * 700: Bold
+ * 800: Extra Bold (Ultra Bold)
+ * 900: Black (Heavy)
+ * -------------------------------------------------------------------------- */
+
+/* Project Main Font */
+/* -------------------------------------------------------------------------- */
+
+body{
+  font-family: $mainFont;
+}
+
+/* Project Imported CDN Fonts */
+/* @include font-face(FontName, FontPath, 300, normal, eot woff2 woff ttf svg); */
+/* -------------------------------------------------------------------------- */
+
+
+
+/* Project Fonts */
+/* -------------------------------------------------------------------------- */
+

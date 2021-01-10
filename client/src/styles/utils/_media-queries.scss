@@ -1,0 +1,318 @@
+/*
+  * * * * * * * * * * * * * * * * * * * * *
+            * * Media Queries * *
+  * * * * * * * * * * * * * * * * * * * * *
+*/
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | variables
+  ----------------------------------------------------------------*/
+
+$xxs:     0px;    // Extra Extra Small Devices
+$xs:    280px;    // Extra Small Devices
+$ms:    320px;    // Mobile S
+$mm:    360px;    // Mobile M
+$ml:    425px;    // Mobile L
+$sm:    576px;    // Small Device
+$md:    768px;    // Tablets
+$lg:    992px;    // Netbooks
+$lt:    1024px;   // Laptop
+$ltm:   1200px;   // Laptop M
+$ltl:   1440px;   // Laptop L
+$xl:    1920px;   // Extra Large Devices
+$xxl:   2560px;   // Extra Extra Large Devices
+
+/* ----------------------------------------------------------------
+     Adaptive | variables | min-width
+  ----------------------------------------------------------------*/
+
+$xs-up:                '(min-width: 280px)';    // Extra Small Devices
+$ms-up:                '(min-width: 320px)';    // Mobile S
+$mm-up:                '(min-width: 360px)';    // Mobile M
+$ml-up:                '(min-width: 425px)';    // Mobile L
+$sm-up:                '(min-width: 576px)';    // Small Device
+$md-up:                '(min-width: 768px)';    // Tablets
+$lg-up:                '(min-width: 992px)';    // Netbooks
+$lt-up:               '(min-width: 1024px)';    // Laptop
+$ltm-up:              '(min-width: 1200px)';    // Laptop M
+$ltl-up:              '(min-width: 1440px)';    // Laptop L
+$xl-up:               '(min-width: 1920px)';    // Extra Large Devices
+$xxl-up:              '(min-width: 2560px)';    // Extra Extra Large Devices
+
+/* ----------------------------------------------------------------
+     Adaptive | variables | max-width
+  ----------------------------------------------------------------*/
+
+$xs-down:                '(max-width: 279px)';    // Extra Extra Small Devices
+$ms-down:                '(max-width: 319px)';    // Extra Small Devices
+$mm-down:                '(max-width: 359px)';    // Mobile S
+$ml-down:                '(max-width: 424px)';    // Mobile M
+$sm-down:                '(max-width: 575px)';    // Mobile L
+$md-down:                '(max-width: 767px)';    // Small Device
+$lg-down:                '(max-width: 991px)';    // Tablets
+$lt-down:               '(max-width: 1023px)';    // Netbooks
+$ltm-down:              '(max-width: 1199px)';    // Laptop
+$ltl-down:              '(max-width: 1439px)';    // Laptop M
+$xl-down:               '(max-width: 1919px)';    // Laptop L
+$xxl-down:              '(max-width: 2559px)';    // Extra Large Devices
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | screens
+  ----------------------------------------------------------------*/
+
+$hd:      (max-width: 1280px) and (max-height: 720px);
+$fullHd:  (max-width: 1920px) and (max-height: 1080px);
+$quadHd:  (max-width: 3840px) and (max-height: 2160px);
+$fourK:   (max-width: 4096px) and (max-height: 2160px);
+
+/* ----------------------------------------------------------------
+     Adaptive | screens | min-height
+  ----------------------------------------------------------------*/
+
+$hd-up:                 '(min-height: 720px)';
+$fullHd-up:             '(min-height: 1080px)';
+$fourK-up:              '(min-height: 2160px)';
+
+/* ----------------------------------------------------------------
+    Adaptive | screens | max-height
+  ----------------------------------------------------------------*/
+
+$hd-down:               '(max-height: 719px)';
+$fullHd-down:           '(max-height: 1079px)';
+$fourK-down:            '(max-height: 2159px)';
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | width mixins | min-width
+  ----------------------------------------------------------------*/
+
+/* Mobile min-width */
+
+@mixin xs-up {
+  @media screen and #{$xs-up} {
+    @content;
+  }
+}
+
+@mixin ms-up {
+  @media screen and #{$ms-up} {
+    @content;
+  }
+}
+
+@mixin mm-up {
+  @media screen and #{$mm-up} {
+    @content;
+  }
+}
+
+@mixin ml-up {
+  @media screen and #{$ml-up} {
+    @content;
+  }
+}
+
+@mixin sm-up {
+  @media screen and #{$sm-up} {
+    @content;
+  }
+}
+
+/* Tablet min-width */
+
+@mixin md-up {
+  @media screen and #{$md-up} {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media screen and #{$lg-up} {
+    @content;
+  }
+}
+
+/* Desktop min-width */
+
+@mixin lt-up {
+  @media screen and #{$lt-up} {
+    @content;
+  }
+}
+
+@mixin ltm-up {
+  @media screen and #{$ltm-up} {
+    @content;
+  }
+}
+
+@mixin ltl-up {
+  @media screen and #{$ltl-up} {
+    @content;
+  }
+}
+
+@mixin xl-up {
+  @media screen and #{$xl-up} {
+    @content;
+  }
+}
+
+@mixin xxl-up {
+  @media screen and #{$xxl-up} {
+    @content;
+  }
+}
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | width mixins | max-width
+  ----------------------------------------------------------------*/
+
+/* Mobile max-width */
+
+@mixin xs-down {
+  @media screen and #{$xs-down}{
+    @content;
+  }
+}
+
+@mixin ms-down {
+  @media screen and #{$ms-down}{
+    @content;
+  }
+}
+
+@mixin mm-down {
+  @media screen and #{$mm-down}{
+    @content;
+  }
+}
+
+@mixin ml-down {
+  @media screen and #{$ml-down} {
+    @content;
+  }
+}
+
+@mixin sm-down {
+  @media screen and #{$sm-down}{
+    @content;
+  }
+}
+
+/* Tablet max-width */
+
+@mixin md-down {
+  @media screen and #{$md-down}{
+    @content;
+  }
+}
+
+@mixin lg-down {
+  @media screen and #{$lg-down}{
+    @content;
+  }
+}
+
+/* Desktop max-width */
+
+@mixin lt-down {
+  @media screen and #{$lt-down}{
+    @content;
+  }
+}
+
+@mixin ltm-down {
+  @media screen and #{$ltm-down}{
+    @content;
+  }
+}
+
+@mixin ltl-down {
+  @media screen and #{$ltl-down}{
+    @content;
+  }
+}
+
+@mixin xl-down {
+  @media screen and #{$xl-down}{
+    @content;
+  }
+}
+
+@mixin xxl-down {
+  @media screen and #{$xxl-down}{
+    @content;
+  }
+}
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | screens mixins |
+  ----------------------------------------------------------------*/
+
+@mixin hd {
+  @media screen and #{$hd}{
+    @content;
+  }
+}
+
+@mixin fullHd {
+  @media screen and #{$fullHd}{
+    @content;
+  }
+}
+
+@mixin quadHd {
+  @media screen and #{$quadHd}{
+    @content;
+  }
+}
+
+@mixin fourK {
+  @media screen and #{$fourK}{
+    @content;
+  }
+}
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | height mixins | min-height
+  ----------------------------------------------------------------*/
+
+@mixin hd-up {
+  @media screen and #{$hd-up}{
+    @content;
+  }
+}
+
+@mixin fullHd-up {
+  @media screen and #{$fullHd-up}{
+    @content;
+  }
+}
+
+@mixin fourK-up {
+  @media screen and #{$fourK-up}{
+    @content;
+  }
+}
+
+/* ----------------------------------------------------------------
+    >>> Adaptive | height mixins | max-height
+  ----------------------------------------------------------------*/
+
+@mixin hd-down {
+  @media screen and #{$hd-down}{
+    @content;
+  }
+}
+
+@mixin fullHd-down {
+  @media screen and #{$fullHd-down}{
+    @content;
+  }
+}
+
+@mixin fourK-down {
+  @media screen and #{$fourK-down}{
+    @content;
+  }
+}
