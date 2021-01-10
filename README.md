@@ -10,5 +10,5 @@ Node.js
 v.0.1 | BETA (no styles)
     
     Как запустить проект: 
-        1. В консоли: npm install
-        2. npm run dev
+        1. В главной директории и в папке client: npm install
+        2. В главной директории: npm run dev
