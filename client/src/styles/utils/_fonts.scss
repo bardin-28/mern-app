@@ -16,13 +16,14 @@
 
 body{
   font-family: $mainFont;
+  color: $black;
 }
 
 /* Project Imported CDN Fonts */
 /* @include font-face(FontName, FontPath, 300, normal, eot woff2 woff ttf svg); */
 /* -------------------------------------------------------------------------- */
 
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 /* Project Fonts */
 /* -------------------------------------------------------------------------- */

@@ -7,7 +7,7 @@ React.js
 Node.js
 
 
-v.0.1 | BETA (no styles)
+v.0.1 | BETA
     
     Как запустить проект: 
         1. В главной директории и в папке client: npm install

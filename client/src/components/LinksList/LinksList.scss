@@ -1,0 +1,57 @@
+@import 'src/styles/utils/variables';
+@import 'src/styles/utils/media-queries';
+
+.links-list-wrap{
+  padding-top: 60px;
+
+}
+
+.no-links-body{
+  margin-top: 65px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.links-list-body{
+  min-width: 100%;
+
+  tr{
+    height: 40px;
+    align-items: center;
+    border-bottom: 2px solid $blue;
+    transition: .5s;
+    color: $black;
+  }
+
+  tr:hover{
+    background: $blue;
+    color: $white;
+  }
+
+  thead tr{
+    border-bottom: 2px solid transparent;
+
+    &:hover{
+      background: transparent;
+      color: $black;
+    }
+  }
+
+  td{
+    max-width: 1000px;
+    white-space : nowrap;
+    padding: 7px;
+    text-overflow: ellipsis;
+    overflow : hidden;
+    table-layout: fixed;
+    text-align: center;
+  }
+
+  a{
+    cursor: pointer;
+
+    &:hover{
+      border-bottom: 1px solid $white;
+    }
+  }
+}

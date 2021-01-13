@@ -1,0 +1,15 @@
+@import 'src/styles/utils/variables';
+@import 'src/styles/utils/media-queries';
+
+.create-title{
+  margin-top: 80px;
+  font-size: 30px;
+  margin-bottom: 45px;
+}
+
+.create-body input{
+  padding: 5px;
+  width: 100%;
+  height: 45px;
+  border-bottom: 2px solid $blue;
+}

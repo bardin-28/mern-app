@@ -2,7 +2,7 @@
  * >>> Variables :
  * -------------------------------------------------------------------------- */
 // Fonts
-$mainFont: sans-serif;
+$mainFont: 'Roboto', sans-serif;
 
 // Animations
 $firstAnim: all 0.5s ease;
@@ -10,4 +10,7 @@ $secondAnim: all 1s ease;
 
 // Colors
 $white: #ffffff;
-$black: #000000;
+$black: #333;
+$grey: #2C2C2C;
+$grey-text: #B5B5B5;
+$blue: #18A0FB;
