@@ -31,7 +31,7 @@ async function start(){
             useUnifiedTopology: true,
             useCreateIndex: true
         })
-        app.listen(5000, ()=> console.log('app started...'))
+        app.listen(5000, ()=> console.log(`app started on PORT... ${PORT}`))
 
     }catch (e){
         console.log('Server Error', e.message)

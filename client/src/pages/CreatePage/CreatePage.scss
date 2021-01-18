@@ -13,3 +13,12 @@
   height: 45px;
   border-bottom: 2px solid $blue;
 }
+
+.create-body input.error{
+  border-bottom: 2px solid #F24E1E;
+  color: #F24E1E;
+}
+
+.create-body input.error::placeholder{
+  color: #F24E1E;
+}

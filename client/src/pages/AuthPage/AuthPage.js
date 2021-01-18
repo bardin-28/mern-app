@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import {useHttp} from "../../hooks/http.hook";
 import {AuthContext} from "../../context/AuthContext";
 
@@ -14,11 +14,6 @@ export const AuthPage = () =>{
         password: ''
     })
 
-    useEffect(()=>{
-        console.log(error, 'error')
-        // clearError()
-    },[error])
-
     const changeHandler = event =>{
         setForm({ ...form, [event.target.name]: event.target.value })
     }
@@ -26,17 +21,15 @@ export const AuthPage = () =>{
     const registerHandler  = async () =>{
         try{
             const data = await request('/api/auth/register', 'POST', {...form})
-            console.log('data', data)
         }catch (e){}
     }
 
     const loginHandler  = async () =>{
         try{
             const data = await request('/api/auth/login', 'POST', {...form})
-            console.info('auth: ', auth)
             auth.login(data.token, data.userId)
         }catch (e){
-            console.error(e, 'error in login')
+            console.error(e)
         }
     }
 
@@ -50,7 +43,9 @@ export const AuthPage = () =>{
                        <div className="auth-form">
                            <div className="auth-input-wrap">
                                <input
-                                   style={{border: "1px solid #adadad"}}
+                                   style={error ?
+                                       {border: "2px solid #F24E1E"} :
+                                       {border: "2px solid #adadad"}}
                                    placeholder="Введите Email"
                                    type="email"
                                    id="auth-email"
@@ -61,7 +56,9 @@ export const AuthPage = () =>{
                            </div>
                            <div className="auth-input-wrap">
                                <input
-                                   style={{border: "1px solid #adadad"}}
+                                   style={error ?
+                                       {border: "2px solid #F24E1E"} :
+                                       {border: "2px solid #adadad"}}
                                    placeholder="Введите пароль"
                                    type="text"
                                    id="auth-password"
@@ -84,6 +81,7 @@ export const AuthPage = () =>{
                                onClick={registerHandler}
                            >Регистрация</button>
                        </div>
+                       <p className="auth-errors">{error}</p>
                    </div>
                </div>
             </div>

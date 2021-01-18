@@ -1,28 +1,13 @@
-import React, {useContext, useState} from 'react'
+import React from 'react'
 import {Link} from "react-router-dom";
-import {useHttp} from '../../hooks/http.hook'
-import {AuthContext} from "../../context/AuthContext";
 
 
 import './LinksList.scss'
 
-export const LinksList = ({links}) =>{
-    const {loading, request} = useHttp()
-    const [link, setLink] = useState('')
-    const {token} = useContext(AuthContext)
+export const LinksList = ({links, deleteHandler}) =>{
 
     if(!links.length){
         return <h3 className="no-links-body">Ссылок пока нет</h3>
-    }
-    const deleteHandler = async (event, linkID) => {
-        // event.preventDefault()
-        // setLink(link._id)
-        try {
-            // console.log('linkid ', link, linkID)
-            const data = await request('/api/link/delete', 'DELETE', {delId: linkID}, {
-                Authorization: `Bearer ${token}`
-            })
-        } catch (e) {}
     }
 
     return (
@@ -33,7 +18,6 @@ export const LinksList = ({links}) =>{
                     <th>№</th>
                     <th>Оригинальная</th>
                     <th>Сокращенная</th>
-                    <th></th>
                 </tr>
                 </thead>
 
@@ -48,14 +32,15 @@ export const LinksList = ({links}) =>{
                             <td>
                                 <Link to={`/detail/${link._id}`}>Подробнее</Link>
                             </td>
-                            {/*<td>*/}
-                            {/*    <a*/}
-                            {/*        href=''*/}
-                            {/*        onClick={(e)=>{*/}
-                            {/*            deleteHandler(e, link._id);*/}
-                            {/*        }}*/}
-                            {/*    >Удалить</a>*/}
-                            {/*</td>*/}
+                            <td>
+                                <a
+                                    href=''
+                                    onClick={(e)=>{
+                                        e.preventDefault()
+                                        deleteHandler(e, link._id, index);
+                                    }}
+                                >Удалить</a>
+                            </td>
                         </tr>
                     )
                 }) }

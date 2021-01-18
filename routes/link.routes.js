@@ -33,34 +33,16 @@ router.post('/generate', auth, async (req, res) => {
     }
 })
 
-router.get('/delete', auth, async (req, res) => {
+router.delete('/delete', auth, async (req, res) => {
     try {
-        const baseUrl = config.get('baseUrl')
         const {delId} = req.body
+        const exist = await Link.findByIdAndDelete( delId )
 
-        // const exist = await Link.findOne({ delId })
+        if (exist) {
+            return res.status(200).json({ message: 'deleted!' })
+        }
 
-        // if (exist) {
-        //     return res.json({ link: delId })
-        // }
 
-        // const delPost = async () => await User.findOne({_id: delId}, function (error, person){
-        //     console.log("This object will get deleted " + person);
-        //     person.remove();
-        //
-        // });
-        //
-        // await delPost.save()
-        //
-        // res.status(200).json({ delId, message: 'тута' })
-
-        // const link = new Link({
-        //     code, to, from, owner: req.user.userId
-        // })
-        //
-        // // await link.save()
-        //
-        // res.status(201).json({ link })
     } catch (e) {
         res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
     }
