@@ -48,20 +48,6 @@ router.delete('/delete', auth, async (req, res) => {
     }
 })
 
-router.post('/update/:id', auth, async (req, res) =>{
-    try{
-         const {updId} = req.body
-         const exist = await Link.findById( updId )
-
-        if (exist) {
-            return res.status(200).json({ message: 'updated!' })
-        }
-
-    } catch (e){
-        res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
-    }
-})
-
 router.get('/', auth, async (req, res) => {
     try {
         const links = await Link.find({ owner: req.user.userId })
