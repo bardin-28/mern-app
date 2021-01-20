@@ -9,7 +9,7 @@
   font-size: 18px;
 }
 
-.link-card-body a{
+.link-card-body a:first-of-type{
   cursor: pointer;
   border-bottom: 1px solid $blue;
 
@@ -23,4 +23,13 @@
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 30px;
+}
+
+.link-info{
+  display: flex;
+}
+
+.link-update{
+  cursor: pointer;
+  margin-left: 15px;
 }

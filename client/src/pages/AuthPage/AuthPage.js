@@ -9,6 +9,7 @@ export const AuthPage = () =>{
     const auth = useContext(AuthContext)
 
     const {loading, error, request} = useHttp()
+    const [created, setCreated] = useState('')
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -21,6 +22,8 @@ export const AuthPage = () =>{
     const registerHandler  = async () =>{
         try{
             const data = await request('/api/auth/register', 'POST', {...form})
+            setCreated(data.message)
+
         }catch (e){}
     }
 
@@ -81,6 +84,7 @@ export const AuthPage = () =>{
                                onClick={registerHandler}
                            >Регистрация</button>
                        </div>
+                       <p className="auth-errors">{created}</p>
                        <p className="auth-errors">{error}</p>
                    </div>
                </div>

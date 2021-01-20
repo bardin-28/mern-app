@@ -11,7 +11,7 @@ export const LinksPage = () => {
     const {token} = useContext(AuthContext)
 
     const deleteHandler = async (event, linkID, deletedIndex) => {
-        setLink(link._id)
+        setLink(linkID)
         try {
             const data = await request('/api/link/delete', 'DELETE', {delId: linkID}, {
                 Authorization: `Bearer ${token}`
