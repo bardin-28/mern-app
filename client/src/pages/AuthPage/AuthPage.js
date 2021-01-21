@@ -63,7 +63,7 @@ export const AuthPage = () =>{
                                        {border: "2px solid #F24E1E"} :
                                        {border: "2px solid #adadad"}}
                                    placeholder="Введите пароль"
-                                   type="text"
+                                   type="password"
                                    id="auth-password"
                                    name="password"
                                    onChange={changeHandler}
