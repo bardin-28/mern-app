@@ -12,7 +12,13 @@
 .link-card-body a:first-of-type{
   cursor: pointer;
   border-bottom: 1px solid $blue;
+  margin: 15px 0;
+  word-break: break-all;
 
+  @include md-up{
+    margin: 0;
+    margin-left: 10px;
+  }
 }
 
 .link-card-body p{
@@ -27,6 +33,12 @@
 
 .link-info{
   display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+
+  @include md-up{
+    flex-direction: row;
+  }
 }
 
 .link-update{

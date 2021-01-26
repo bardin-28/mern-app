@@ -1,36 +1,47 @@
 @import 'src/styles/utils/variables';
 @import 'src/styles/utils/media-queries';
 
-
 .auth-body{
-  min-height: 100vh;
-}
-
-.auth-body{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  justify-content: center;
 }
 
 .auth-title{
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 40px;
-  padding-top: 150px;
-  padding-bottom: 50px;
+  font-size: 28px;
+  padding-bottom: 25px;
   color: $blue;
+
+  @include md-up{
+    font-size: 40px;
+
+  }
 }
 
 .auth-form-wrap{
-  padding: 30px;
+  width: 100%;
+  padding: 20px;
   border-radius: 10px;
   background: $blue;
+  margin: 0 auto;
+  max-width: 290px;
 
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=35, Direction=0, Color=#000000)";/*IE 8*/
   -moz-box-shadow: 0 0 35px 14px rgba(0,0,0,0.1);/*FF 3.5+*/
   -webkit-box-shadow: 0 0 35px 14px rgba(0,0,0,0.1);/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
   box-shadow: 0 0 35px 14px rgba(0,0,0,0.1);/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=35, Direction=135, Color=#000000); /*IE 5.5-7*/
+
+
+  @include md-up{
+    max-width: 320px;
+    padding: 30px;
+  }
 }
 
 .auth-form-title{
@@ -42,12 +53,17 @@
 
 .auth-input-wrap{
   input{
-    min-width: 260px;
+    min-width: 100%;
+    max-width: 260px;
     width: 100%;
     height: 35px;
     border-radius: 40px;
     padding: 10px;
     font-size: 15px;
+
+    @include md-up{
+      min-width: 260px;
+    }
   }
 
   input::placeholder{

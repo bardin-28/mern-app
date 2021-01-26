@@ -12,7 +12,11 @@
   justify-content: flex-end;
 
   li{
-    font-size: 16px;
+    font-size: 15px;
+
+    @include md-up{
+      font-size: 16px;
+    }
   }
 
   li:not(:first-child){
@@ -22,6 +26,10 @@
   a{
     cursor: pointer;
     transition: .5s;
+  }
+
+  a.active{
+    color: $white;
   }
 
   a:hover{

@@ -1,13 +1,20 @@
-Full-stack веб-приложение
-MERN
+Веб-приложение: "Сократи ссылку"
 
-Mongo DB
-Express.js
-React.js
-Node.js
+Описание:
+    Приложения для сокращения ссылок и подсчёт количества переходов по ссылке
+
+Основные технологии которые использовались:
+    1. Mongo DB
+    2. Express.js
+    3. React.js
+    4. Node.js
+    5. Jsonwebtoken
+    6. Bcryptjs
+    7. Mongoose
+    8. SCSS
 
 
-v.0.5 | BETA
+v.1.0 | Final
     
     Как запустить проект: 
         1. В главной директории и в папке client: npm install

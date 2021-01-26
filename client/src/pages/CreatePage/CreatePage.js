@@ -13,9 +13,10 @@ export const CreatePage = () => {
     const [link, setLink] = useState('')
 
     function isValidURL(string) {
-        var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+        let res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
         return (res !== null)
     };
+
 
     const pressHandler = async event => {
         if (event.key === 'Enter') {
@@ -23,15 +24,18 @@ export const CreatePage = () => {
             if(!valid){
                 setError(true)
                 return
-            }else {
+            }
+            else {
                 setError(false)
             }
-            try {
-                const data = await request('/api/link/generate', 'POST', {from: link}, {
-                    Authorization: `Bearer ${auth.token}`
-                })
-                history.push(`/detail/${data.link._id}`)
-            } catch (e) {}
+
+               try {
+                   const data = await request('/api/link/generate', 'POST', {from: link}, {
+                       Authorization: `Bearer ${auth.token}`
+                   })
+                   history.push(`/detail/${data.link._id}`)
+               } catch (e) {}
+
         }
     }
 
@@ -48,7 +52,9 @@ export const CreatePage = () => {
                             id="link"
                             type="text"
                             value={link}
-                            onChange={e => setLink(e.target.value)}
+                            onChange={e => {
+                                setLink(e.target.value)
+                            }}
                             onKeyPress={pressHandler}
                         />
                     </div>

@@ -38,12 +38,12 @@ export const AuthPage = () =>{
 
     return(
         <div className="auth-wrapper">
-            <div className="container">
+            <div className="container container-center">
                <div className="auth-body">
                    <h1 className="auth-title">Сократи ссылку</h1>
                    <div className="auth-form-wrap">
                        <h2 className="auth-form-title">Авторизация</h2>
-                       <div className="auth-form">
+                       <form className="auth-form">
                            <div className="auth-input-wrap">
                                <input
                                    style={error ?
@@ -70,7 +70,7 @@ export const AuthPage = () =>{
                                    value={form.password}
                                />
                            </div>
-                       </div>
+                       </form>
                        <div className="auth-actions">
                            <button
                                className="auth-button"

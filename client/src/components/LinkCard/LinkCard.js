@@ -10,7 +10,6 @@ export const LinkCard = ({ link }) => {
            <div className="container">
               <div className="link-card-body">
                   <h2 className="link-title">Ссылка</h2>
-
                   <form>
                       <div className="link-info">Скороченная ссылка: <a href={link.to} target="_blank" rel="noopener noreferrer">{link.to}</a>
                       </div>
